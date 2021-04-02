@@ -1,0 +1,8 @@
+<h2>Angular OpenCV</h2>
+<div *ngIf="openCVLoadResult | async as result">
+  <div class="error" *ngIf="result.loading">Waiting for OpenCV.js to load!</div>
+  <div class="ready" *ngIf="result.ready">OpenCV.js is ready!</div>
+  <div *ngIf="result.error">OpenCV.js load error!</div>
+</div>
+<canvas #canvasInput id="canvasInput" width="512" height="512"></canvas>
+<canvas #canvasOutput id="canvasOutput" width="512" height="512"></canvas>
